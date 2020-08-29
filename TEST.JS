@@ -10,15 +10,16 @@
    
     console.log(humanSum);
 
+   
     var a = 6;
     var b = 9;
     var theNumbersMatch;
 
-    if (a == b) {
-        the NumbersMatch = true;
+    if (a = b) {
+        theNumbersMatch = true;
 
     } else {
-        the NumbersMatch = false;
+        theNumbersMatch = false;
     }
 
     console.log("Thhe numbers match " + theNumbersMatch);
