@@ -40,4 +40,15 @@ switch(studentName) {
        alert ("This is not the right student");
 
 }
+var a = 6;
+var b = 9;
+var theNumbersMatch;
 
+if (a = b) {
+    theNumbersMatch = true;
+
+} else {
+    theNumbersMatch = false;
+}
+
+console.log("Thhe numbers match " + theNumbersMatch);
