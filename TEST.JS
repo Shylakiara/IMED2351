@@ -1,25 +1,26 @@
+"use strict";
+function addNumbers (a, b){
+    var addedTotal= a +b;
+    return addedTotal ;
+}
+var myDemo = document.getElementById("parent");
+console.log(myDemo.childNodes.length);
 
-    var date = new Date();
-    document.body.innerHTML = "<h1> Today is " + date + "<h1>";
+var addNumbers2=  addNumbers(7, 9);
+alert (addNumbers2) ;
 
-    var a = 7;
-    var b = 4;
-    var sum = a + b;
+var studentName= prompt ("Who is your name?");
 
-    var humanSum = "The value of a: " + a + ". The vlaue of b: " + b + ". The sum of a and b" + sum + ".";
-   
-    console.log(humanSum);
+switch(studentName) {
+   case "Tashyla":
+   alert("Hello!");
+   break;
 
-   
-    var a = 6;
-    var b = 9;
-    var theNumbersMatch;
+   case "Nobles":
+   alert ("Nice to Meet You");
+   break;
 
-    if (a = b) {
-        theNumbersMatch = true;
+   default:
+       alert ("This is not the right student");
 
-    } else {
-        theNumbersMatch = false;
-    }
-
-    console.log("Thhe numbers match " + theNumbersMatch);
+}
