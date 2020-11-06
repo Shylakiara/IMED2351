@@ -5,6 +5,42 @@
   <title>HPlus Sport</title>
   <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../jquery-3.0.0.js"></script>
+  <script>
+    $(function () {
+            $("#products h2.product-name[data-type='mineralwater']").css("background-color", "#F50A83");
+            $("#products h2.product-name[data-type='vitamin']").css("background-color", "#72FF00");
+            $("#products h2.product-name[data-type='proteinbar']").css("background-color", "#FFF500");
+
+            document.querySelector('#v').addEventListener('change',function (evt) {
+              productname("vitamins", evt.target.checked);});
+            document.querySelector('#m').addEventListener('change',function (evt) {
+              nameofproduct("mineralwater", evt.target.checked);});
+            document.querySelector('#p').addEventListener('change',function (evt) {
+              nameofproduct("proteinbar", evt.target.checked); });
+              $(".product-item").each(function () {
+                var prodName = encodeURIComponent($(this).children("h2").text());
+                var prodID = encodeURIComponent($(this).data("prod_id"));
+
+                var link = $("<a href='product.html?prodName=" + prodName + "&prodID=" + prodID + "'/>");
+                $(this).children("img").wrap(link);
+            })
+              })
+function nameofproduct(categoryName, checklist) {
+         var listofitems = "";
+            switch (categoryName) {
+            case "vitamins":
+            listofitems = "h2[data-type='vitamin']";
+                break;
+            case "mineralwater":
+            listofitems = "h2[data-type='mineralwater']";
+                break;
+            case "proteinbar":
+            listofitems = "h2[data-type='proteinbar']";
+                break;
+            } $(".product-item").has(listofitems).css('display', checklist ? "" : "none");
+        }
+  </script>
 </head>
 <body>
 
@@ -45,7 +81,20 @@
   <div class="container">
     <h2 class="headline">Products</h2>
     <p>H+ Sport is <em>dedicated to creating</em> eco-friendly, high-quality, nutrient-rich, nutritional products that <em>enhance active lifestyles</em>. We <a href="#guarantee">guarantee</a> it. Take a look at some of our products.</p>
-  </div><!-- container -->
+  </div>  
+  <div id="allthefoodlisted">
+    <form>
+        <div>
+            <span>Show: </span>
+            <input id="v" type="checkbox" checked="checked" />
+            <label for="v">Only Vitamins Shows</label>
+            <input id="m" type="checkbox" checked="checked" />
+            <label for="m">Only Mineral Water Shows </label>
+            <input id="p" type="checkbox" checked="checked" />
+            <label for="p">Only Protein Bars Shows </label>
+        </div>
+    </form>
+</div>
   <ul class="product-list">
     <li class="product-item" data-prod_id="V-A1037">
         <img class="product-image" src="images/products/vitamin-a.jpg" alt="Vitamin A - Product Photo">
